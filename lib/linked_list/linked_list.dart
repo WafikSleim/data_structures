@@ -1,4 +1,4 @@
-import 'package:untitled/common/common.dart';
+import 'package:data_structures/common/common.dart';
 
 class LinkedList<T> {
   Node<T>? _first;
@@ -51,6 +51,7 @@ class LinkedList<T> {
     if (temp != null) {
       if(where.call(temp.value)) {
         temp = temp.next;
+        _length--;
       } else {
         while (temp?.next != null) {
           if(where.call(temp!.next!.value)) {
@@ -58,6 +59,7 @@ class LinkedList<T> {
           }
           temp = temp.next;
         }
+        _length--;
         temp?.next = temp.next?.next;
       }
     } else {

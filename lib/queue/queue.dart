@@ -1,6 +1,8 @@
+
+
 import 'package:data_structures/common/common.dart';
 
-class Stack<T> {
+class Queue<T> {
   Node<T>? _first;
   Node<T>? _last;
   int _length = 0;
@@ -15,18 +17,20 @@ class Stack<T> {
 
   bool get isNotEmpty => !isEmpty;
 
-  void push(T item) {
-    if (_first != null) {
-      Node<T> newNode = Node<T>(item, _first);
-      _first = newNode;
+
+  void enqueue(T item) {
+    Node<T> newItem = Node(item, null);
+    if (_first == null) {
+      _first = newItem;
+      _last = newItem;
     } else {
-      Node<T> newNode = Node<T>(item, null);
-      _first = newNode;
+      _last!.next = newItem;
+      _last = newItem;
     }
     _length++;
   }
 
-  T pop() {
+  T dequeue() {
     if (isEmpty) {
       throw "the stack is empty";
     } else if (_length == 1) {
@@ -42,6 +46,7 @@ class Stack<T> {
       return val;
     }
   }
+
 
   void printAll() {
     Node<T>? temp = _first;
@@ -71,4 +76,5 @@ class Stack<T> {
     }
     return false;
   }
+
 }
