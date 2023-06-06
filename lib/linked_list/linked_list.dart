@@ -1,9 +1,4 @@
-class Node<T> {
-  T value;
-  Node<T>? next;
-
-  Node(this.value, this.next);
-}
+import 'package:untitled/common/common.dart';
 
 class LinkedList<T> {
   Node<T>? _first;
