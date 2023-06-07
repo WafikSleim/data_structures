@@ -1,7 +1,7 @@
 name: data_structures
-description: A sample command-line application.
+description: data structures using dart
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/WafikSleim/data_structures
 
 environment:
   sdk: '>=2.19.6 <3.0.0'
