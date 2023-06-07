@@ -18,9 +18,10 @@ class TreeModel extends BaseNodeBTS {
 
 void main(List<String> arguments) {
   LinkedList<int> linkedList = LinkedList<int>();
-  Stack<int> stack = Stack();
-  Queue<int> queue = Queue();
+  Stack<int> stack = Stack<int>();
+  Queue<int> queue = Queue<int>();
   BTS<TreeModel> bts = BTS<TreeModel>();
+  var x = BTS();
   bts.insert(TreeModel(value: 20, productName: "first product"));
   bts.insert(TreeModel(value: 5, productName: "second product"));
   bts.insert(TreeModel(value: 7, productName: "third product"));
@@ -30,7 +31,7 @@ void main(List<String> arguments) {
   bts.insert(TreeModel(value: 21, productName: "7 product"));
   bts.insert(TreeModel(value: 25, productName: "8 product"));
   bts.insert(TreeModel(value: 22, productName: "9 product"));
-  bts.preorderTraversal();
+  bts.inorderTraversal();
   bool searchResult = bts.search(4);
   print("search result = $searchResult");
 }
