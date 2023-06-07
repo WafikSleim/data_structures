@@ -66,19 +66,51 @@ class BTS<T extends BaseNodeBTS> {
     return _search(item, bTSRoot: _root);
   }
 
-  void _printAll(Node<T> bTSRoot) {
+  void _preorderTraversal(Node<T> bTSRoot) {
     print(bTSRoot.value.toString());
     if(bTSRoot.left != null) {
-      _printAll(bTSRoot.left!);
+      _preorderTraversal(bTSRoot.left!);
     }
     if (bTSRoot.right != null) {
-      _printAll(bTSRoot.right!);
+      _preorderTraversal(bTSRoot.right!);
     }
   }
 
-  void printAll() {
+  void preorderTraversal() {
     if (isNotEmpty) {
-      _printAll(_root!);
+      _preorderTraversal(_root!);
+    }
+  }
+
+  void _inorderTraversal(Node<T> bTSRoot) {
+    if(bTSRoot.left != null) {
+      _inorderTraversal(bTSRoot.left!);
+    }
+    print(bTSRoot.value.toString());
+    if (bTSRoot.right != null) {
+      _inorderTraversal(bTSRoot.right!);
+    }
+  }
+
+  void inorderTraversal() {
+    if (isNotEmpty) {
+      _inorderTraversal(_root!);
+    }
+  }
+
+  void _postorderTraversal(Node<T> bTSRoot) {
+    if(bTSRoot.left != null) {
+      _postorderTraversal(bTSRoot.left!);
+    }
+    if (bTSRoot.right != null) {
+      _postorderTraversal(bTSRoot.right!);
+    }
+    print(bTSRoot.value.toString());
+  }
+
+  void postorderTraversal() {
+    if (isNotEmpty) {
+      _postorderTraversal(_root!);
     }
   }
 }

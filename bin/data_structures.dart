@@ -30,7 +30,7 @@ void main(List<String> arguments) {
   bts.insert(TreeModel(value: 21, productName: "7 product"));
   bts.insert(TreeModel(value: 25, productName: "8 product"));
   bts.insert(TreeModel(value: 22, productName: "9 product"));
-  bts.printAll();
+  bts.preorderTraversal();
   bool searchResult = bts.search(4);
   print("search result = $searchResult");
 }
